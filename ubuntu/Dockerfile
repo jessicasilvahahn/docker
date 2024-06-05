@@ -21,7 +21,7 @@ RUN apt-get install -y \
     python3 \
     git
 
-RUN git clone https://code.qt.io/qt/qt6.git /opt/qt6
+RUN git clone https://code.qt.io/qt/qt5.git qt6 /opt/qt6
 
 WORKDIR /opt/qt6
 RUN ./init-repository \
