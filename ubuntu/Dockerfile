@@ -1,9 +1,13 @@
 FROM ubuntu:20.04
 
+
+#Set timezone
+RUN apt-get update && \
+    apt-get install -yq tzdata && \
+    ln -fs /usr/share/zoneinfo/Australia/Sydney /etc/localtime && \
+    dpkg-reconfigure -f noninteractive tzdata
+
 #Install QT6
-
-RUN apt-get update 
-
 RUN apt-get install -y \
     build-essential \
     libgl-dev \
