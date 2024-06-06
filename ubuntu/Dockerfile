@@ -21,9 +21,9 @@ RUN apt-get install -y \
     python3 \
     git
 
-RUN git clone https://code.qt.io/qt/qt5.git qt6 /opt/qt6
+RUN git clone https://code.qt.io/qt/qt5.git qt6
 
-WORKDIR /opt/qt6
+WORKDIR qt6
 RUN ./init-repository \
     && ./configure -prefix /opt/qt6-install -opensource -confirm-license -release -nomake examples -nomake tests \
     && make -j$(nproc) \
